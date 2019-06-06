@@ -1,0 +1,6 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+
+.done { 
+    text-decoration: line-through;
+    color: salmon; 
+}
