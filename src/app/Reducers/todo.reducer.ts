@@ -19,7 +19,7 @@ export interface TodoPayload {
 }
 
 export function todoReducer(
-  state = [],
+  state = [{index: 1, value: 'test', done: false}],
   action: ActionsWithPayload<TodoPayload>
 ) {
   switch (action.type) {

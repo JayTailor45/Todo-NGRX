@@ -16,12 +16,19 @@
   </button>
 
   <ul>
-    <li *ngFor="let todo of todos$ | async; let i = index;">
-      <span [class.done]="todo.done">{{ todo.value }}</span>
-      <button (click)="editTodo(todo, i)">Edit</button>
-      <button (click)="toggleTodo(todo, i)">Toggle Done</button>
-      <button (click)="removeTodo(i)">X</button>
-    </li>
+    <div *ngIf="todos$">
+      <li *ngFor="let todo of todos$ | async; let i = index;" class="card d-flex flex-row">
+        <div class="md-8">
+          <span [class.done]="todo.done" class="p-3 d-inline-flex">{{ todo.value }}</span>
+        </div>
+        <div class="md-4">
+          <button (click)="editTodo(todo, i)" class="btn btn-primary p-2 m-2">Edit</button>
+          <button (click)="toggleTodo(todo, i)" class="btn btn-primary p-2 m-2">Toggle Done</button>
+          <button (click)="removeTodo(i)" class="btn btn-danger m-2">X</button>
+        </div>
+      </li>
+    </div>
+
   </ul>
 
 </div>
